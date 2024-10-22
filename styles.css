@@ -1,0 +1,328 @@
+/* Basic Styling */
+body {
+    font-family: 'Arial', sans-serif; /* You can replace 'Arial' with a modern coffee shop font */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(to bottom right, #f0e5d8, #c8b09b); /* Add a gradient background */
+}
+
+/* Navigation Bar Styling */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+nav .nav-links {
+    display: flex;
+    list-style: none;
+    flex-grow: 1;
+    justify-content: center;
+    padding-left: 50px;
+}
+
+nav .nav-links li {
+    margin: 0 15px;
+}
+
+nav .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px;
+}
+
+/* Main Container Styling */
+.main-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ensure text and slideshow are aligned properly */
+    margin: 20px;
+}
+
+/* Home Text Styling */
+.home-text {
+    text-align: center;  /* Center text in the home-text div */
+}
+
+.home-text h1 {
+    font-size: 36px;
+    color: #333;
+    text-align: center; /* Center the heading */
+}
+
+.home-text p {
+    font-size: 20px; /* Increased font size */
+    color: #666;
+    line-height: 1.5; /* Add line height for readability */
+    text-align: center; /* Center the text */
+}
+
+/* Slideshow Styling */
+.slideshow-container {
+    position: relative;
+    width: 60%; /* Set a width for the slideshow */
+    overflow: hidden; /* Hide overflow for transitions */
+    height: 400px; /* Set a fixed height for the slideshow container */
+}
+
+.slideshow {
+    position: relative;
+    width: 100%;
+}
+
+.slide {
+    opacity: 0; /* All slides are initially hidden */
+    transition: opacity 1s ease-in-out; /* Smooth fade transition */
+    position: absolute; /* Stacked position */
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.slide img {
+    width: 40%; /* Make the image take full width of the slide */
+    height: 100%; /* Ensure the image fills the height of the slide */
+    object-fit: cover; /* Maintain aspect ratio */
+    border-radius: 15px; /* Adjust the value for the desired roundness */
+}
+
+.slide.active {
+    opacity: 1; /* Only the active slide is fully visible */
+}
+
+/* Arrow Container Styling */
+.arrow-container {
+    position: absolute; /* Position it absolutely within the slideshow container */
+    top: 0%; /* Center vertically */
+    left: 0; /* Align with the left of the slideshow */
+    width: 44%; /* Take full width of the slideshow */
+    height: 100%; /* Take full height of the slideshow */
+    display: flex; /* Use flexbox to position buttons */
+    justify-content: space-between; /* Space buttons to left and right */
+    align-items: center; /* Center vertically */
+    z-index: 10; /* Ensure buttons are above the images */
+}
+
+#left-arrow, #right-arrow {
+    background-color: rgba(51, 51, 51, 0.7); /* Semi-transparent background */
+    color: #fff;
+    padding: 10px; /* Space around the button text */
+    border: none; /* No border */
+    cursor: pointer; /* Pointer cursor */
+    opacity: 0.7; /* Initial opacity */
+    transition: opacity 0.3s; /* Smooth transition for hover effect */
+    border-radius: 50%; /* Make button circular */
+    width: 40px; /* Fixed width */
+    height: 40px; /* Fixed height */
+}
+
+/* Button Hover Effect */
+#left-arrow:hover, #right-arrow:hover {
+    opacity: 1; /* Fully opaque on hover */
+}
+
+/* Slideshow Fade Animation */
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Menu Section Styling */
+.menu-section {
+    margin: 40px 0; /* Space above and below the menu */
+    padding: 20px;
+    background-color: #fff; /* White background for contrast */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+.menu-section h2 {
+    font-size: 28px; /* Increased font size for the heading */
+    color: #333;
+    text-align: center; /* Center the heading */
+}
+
+.menu-list {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove padding */
+    text-align: center; /* Center the menu items */
+}
+
+.menu-list li {
+    font-size: 20px; /* Increased font size */
+    color: #666;
+    padding: 10px 0; /* Space between items */
+    border-bottom: 1px solid #ddd; /* Line between menu items */
+}
+
+/* About Section Styling */
+.about-section {
+    margin: 40px 0; /* Space above and below the about section */
+    padding: 20px;
+    background-color: #fff; /* White background for contrast */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+.about-section h2 {
+    font-size: 28px; /* Increased font size for the heading */
+    color: #333;
+    text-align: center; /* Center the heading */
+}
+
+.about-section p {
+    font-size: 20px; /* Increased font size */
+    color: #666;
+    text-align: center; /* Center the text */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide nav links on small screens */
+    }
+
+    .burger {
+        display: block; /* Show burger menu */
+    }
+
+    .main-container {
+        flex-direction: column; /* Stack text and slideshow on smaller screens */
+    }
+
+    .slideshow-container {
+        width: 100%; /* Full width for smaller devices */
+    }
+
+    .home-text h1 {
+        font-size: 28px; /* Smaller heading size for mobile */
+    }
+
+    .home-text p {
+        font-size: 16px; /* Smaller text size for mobile */
+    }
+
+    .menu-section h2, .about-section h2 {
+        font-size: 24px; /* Smaller section heading size for mobile */
+    }
+
+    .menu-list li, .about-section p {
+        font-size: 16px; /* Smaller text size for mobile */
+    }
+}
+.subtitle {
+    font-size: 24px; /* Adjust this size as needed */
+    color: #333; /* Change color if desired */
+    text-align: center; /* Center the subtitle */
+    margin: 10px 0; /* Space above and below the subtitle */
+}
+#description {
+    width: 100%;          /* Full width */
+    margin: 0;           /* Remove default margin */
+    padding: 20px;       /* Add padding for spacing */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+#left-arrow, #right-arrow {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust position */
+    background-color: rgba(14, 13, 13, 0.8); /* Semi-transparent background */
+    border: none; /* No border */
+    cursor: pointer; /* Pointer cursor */
+    padding: 10px; /* Space around the button text */
+    font-size: 20px; /* Increase font size */
+    border-radius: 5px; /* Slightly rounded corners */
+}
+
+#left-arrow {
+    left: 10px; /* Position left */
+}
+
+#right-arrow {
+    right: 61%; /* Position right */
+}
+html {
+    scroll-behavior: smooth; /* Enables smooth scrolling for anchor links */
+}
+.map-section {
+    padding: 40px;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+.map-section h2 {
+    margin-bottom: 20px;
+}
+
+.map-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.reviews-section {
+    background-color: #b3adad;
+    padding: 40px;
+    text-align: center;
+}
+
+.reviews-section h2 {
+    margin-bottom: 20px;
+}
+
+.reviews-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+
+}
+
+.review {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 30%;
+}
+
+.review p {
+    font-style: italic;
+}
+
+.review span {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
